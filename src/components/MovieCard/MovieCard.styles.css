@@ -31,3 +31,18 @@
 	text-align: center;
 	margin-bottom: 0.5rem;
 }
+
+@media (max-width: 992px) {
+	.movieCard-container {
+		width: 12rem;
+		height: auto;
+		margin-bottom: 1rem;
+	}
+	.img-container {
+		width: 12rem;
+	}
+
+	.footer h4 {
+		font-size: small;
+	}
+}

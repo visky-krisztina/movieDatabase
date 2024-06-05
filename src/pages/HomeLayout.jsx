@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar/Navbar.component.jsx";
 
 const HomeLayout = () => {
 	const navigation = useNavigation();
+	//console.log(navigation);
 	const isPageLoading = navigation.state === "loading";
 	return (
 		<>

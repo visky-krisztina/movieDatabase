@@ -38,8 +38,6 @@ html {
 	/* rest of the colors */
 	--black: #222;
 	--white: #fff;
-	--red-light: #f8d7da;
-	--red-dark: #842029;
 	--green-light: #d1e7dd;
 	--green-dark: #0f5132;
 
@@ -81,7 +79,6 @@ h5 {
 	font-family: var(--headingFont);
 	font-weight: 400;
 	line-height: 1;
-	text-transform: capitalize;
 	letter-spacing: var(--letterSpacing);
 }
 
@@ -98,10 +95,6 @@ small,
 a {
 	text-decoration: none;
 }
-ul {
-	list-style-type: none;
-	padding: 0;
-}
 
 .img {
 	width: 100%;
@@ -113,7 +106,7 @@ ul {
 .btn {
 	cursor: pointer;
 	color: var(--white);
-	background: var(--primary-500);
+	background: var(--grey-800);
 	border: transparent;
 	border-radius: var(--borderRadius);
 	letter-spacing: var(--letterSpacing);
@@ -126,17 +119,6 @@ ul {
 .btn:hover {
 	background: var(--primary-700);
 	box-shadow: var(--shadow-3);
-}
-.btn-hipster {
-	color: var(--primary-500);
-	background: var(--primary-200);
-}
-.btn-hipster:hover {
-	color: var(--primary-200);
-	background: var(--primary-700);
-}
-.btn-block {
-	width: 100%;
 }
 
 /* form */
@@ -176,11 +158,6 @@ ul {
 ::placeholder {
 	font-family: inherit;
 	color: var(--grey-400);
-}
-.form-alert {
-	color: var(--red-dark);
-	letter-spacing: var(--letterSpacing);
-	text-transform: capitalize;
 }
 
 @keyframes spinner {

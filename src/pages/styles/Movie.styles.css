@@ -1,0 +1,40 @@
+.movie {
+	display: grid;
+	grid-template-columns: 2fr 3fr;
+	gap: 3rem;
+	align-items: center;
+}
+.the-movie-img {
+	width: 15rem;
+	justify-self: end;
+	margin-right: 1rem;
+	border-radius: var(--borderRadius);
+}
+
+.movie p {
+	font-weight: 700;
+	line-height: 2;
+	margin-bottom: 1rem;
+	text-align: justify;
+}
+.movie-data {
+	margin-right: 0.5rem;
+	background: var(--primary-300);
+	padding: 0.25rem 0.5rem;
+	border-radius: var(--borderRadius);
+	color: var(--primary-700);
+	letter-spacing: var(--letterSpacing);
+}
+
+@media (max-width: 992px) {
+	.movie {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+	.the-movie-img {
+		justify-self: center;
+	}
+	.movie-info {
+		padding-top: 0;
+	}
+}

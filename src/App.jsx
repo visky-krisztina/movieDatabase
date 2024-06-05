@@ -18,6 +18,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "movie/:id",
+				errorElement: <SinglePageError />,
 				element: <Movie />,
 			},
 		],

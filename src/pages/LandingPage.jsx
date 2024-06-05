@@ -17,10 +17,8 @@ const LandingPage = () => {
 
 			const data = await response.json();
 			setMovies(data.results);
-			setLoading(false);
 		} catch (error) {
 			setError(error);
-			setLoading(false);
 		}
 	};
 
@@ -28,7 +26,6 @@ const LandingPage = () => {
 		fetchMovies();
 	}, []);
 
-	if (loading) return <div>Loading...</div>;
 	if (error) return <div>Error: {error.message}</div>;
 
 	return (
