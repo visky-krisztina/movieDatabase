@@ -2,7 +2,7 @@ import "./styles/AboutPage.styles.css";
 
 const About = () => {
 	return (
-		<div>
+		<div className='about-container'>
 			<h1>Miről is szól ez a kis app?</h1>
 			<p>
 				Ez egy olyan webalkalmazás, amelynek segítségével filmeket kereshet, és filmekről szerezhet információkat a
