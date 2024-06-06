@@ -1,3 +1,6 @@
+.about-container h1 {
+	margin-top: 3rem;
+}
 .about-container p {
 	line-height: 2;
 	color: var(--grey-500);

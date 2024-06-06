@@ -24,18 +24,26 @@
 	padding: 0.25rem 0.5rem;
 	border-radius: var(--borderRadius);
 	color: var(--primary-700);
-	letter-spacing: var(--letterSpacing);
+	letter-spacing: 1px;
 }
 
 @media (max-width: 992px) {
 	.movie {
 		display: grid;
 		grid-template-columns: 1fr;
+		margin-bottom: 2rem;
+		margin-top: 1rem;
 	}
 	.the-movie-img {
 		justify-self: center;
+		margin-right: 0;
 	}
 	.movie-info {
 		padding-top: 0;
+	}
+	.movie p {
+		font-weight: 600;
+		line-height: 1.5;
+		margin-bottom: 0.4rem;
 	}
 }

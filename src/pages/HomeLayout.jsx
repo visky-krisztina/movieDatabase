@@ -8,7 +8,7 @@ const HomeLayout = () => {
 	return (
 		<>
 			<Navbar />
-			<section className='page'>{isPageLoading ? <div className='loading' /> : <Outlet />}</section>
+			<div className='page'>{isPageLoading ? <div className='loading' /> : <Outlet />}</div>
 		</>
 	);
 };

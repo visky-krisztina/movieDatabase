@@ -1,0 +1,31 @@
+/* Pagination.css */
+.pagination {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	justify-content: center;
+	margin-bottom: 1rem;
+}
+
+.page-item {
+	margin: 0 5px;
+}
+
+.page-link {
+	padding: 8px 12px;
+	border: var(--backgroundColor);
+	cursor: pointer;
+	text-decoration: none;
+	border-radius: var(--borderRadius);
+}
+
+.page-item.active .page-link {
+	background-color: var(--primary-500);
+	color: white;
+	border-color: var(--primary-500);
+}
+
+.page-item.disabled .page-link {
+	cursor: not-allowed;
+	opacity: 0.5;
+}
