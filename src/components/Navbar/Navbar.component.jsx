@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import "./Navbar.styles.css";
 const Navbar = () => {
 	return (
-		<nav className='wrapper'>
+		<nav>
 			<div className='nav-center'>
 				<span className='logo'>Film kereső</span>
 				<div className='nav-links'>

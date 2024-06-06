@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { HomeLayout, AboutPage, LandingPage, ErrorPage, Movie, SinglePageError } from "./pages";
+import { HomeLayout, AboutPage, LandingPage, ErrorPage, Movie } from "./pages";
 
 const router = createBrowserRouter([
 	{
@@ -9,7 +9,6 @@ const router = createBrowserRouter([
 		children: [
 			{
 				index: true,
-				errorElement: <SinglePageError />,
 				element: <LandingPage />,
 			},
 			{
@@ -18,7 +17,6 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "movie/:id",
-				errorElement: <SinglePageError />,
 				element: <Movie />,
 			},
 		],

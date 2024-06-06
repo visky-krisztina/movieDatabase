@@ -15,14 +15,15 @@ const ErrorPage = () => {
 				</div>
 			</div>
 		);
-	}
-	return (
-		<div className='error-container'>
-			<div>
-				<h3>something went wrong</h3>
+	} else {
+		return (
+			<div className='error-container'>
+				<div>
+					<h3>Something else went wrong...</h3>
+				</div>
 			</div>
-		</div>
-	);
+		);
+	}
 };
 
 export default ErrorPage;

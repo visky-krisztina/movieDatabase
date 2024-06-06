@@ -1,24 +1,28 @@
 import React, { useEffect, useState } from "react";
 import MoviesList from "../components/MoviesList/MoviesList.component.jsx";
+import SearchForm from "../components/SearchForm/SearchForm.component.jsx";
 
 const LandingPage = () => {
 	const BASE_URL = "https://api.themoviedb.org/3";
 	const apiKey = import.meta.env.VITE_MOVIE_API_KEY;
 	const [movies, setMovies] = useState([]);
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(null);
+	const [error, setError] = useState(false);
+	const [loading, setLoading] = useState(false);
 
-	const fetchMovies = async (searchkey) => {
+	const fetchMovies = async (searchKey) => {
 		try {
-			const type = searchkey
-				? `search/movie?query=${searchkey}&api_key=${apiKey}`
+			const type = searchKey
+				? `search/movie?query=${searchKey}&api_key=${apiKey}`
 				: `trending/movie/week?api_key=${apiKey}`;
+			setLoading(true);
+			setError(false);
 			const response = await fetch(`${BASE_URL}/${type}`);
-
 			const data = await response.json();
 			setMovies(data.results);
 		} catch (error) {
-			setError(error);
+			setError(true);
+		} finally {
+			setLoading(false); // Set loading to false after fetch
 		}
 	};
 
@@ -26,11 +30,19 @@ const LandingPage = () => {
 		fetchMovies();
 	}, []);
 
-	if (error) return <div>Error: {error.message}</div>;
+	let content = "";
+	if (loading) {
+		content = <div className='loading' />;
+	} else if (error) {
+		content = <div style={{ textAlign: "center" }}>Error: Something else went wrong...</div>;
+	} else {
+		content = <MoviesList movies={movies} />;
+	}
 
 	return (
 		<>
-			<MoviesList movies={movies} />
+			<SearchForm handleSearch={fetchMovies} />
+			{content}
 		</>
 	);
 };

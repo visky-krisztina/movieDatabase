@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./styles/Movie.styles.css";
 
-//https://api.themoviedb.org/3/movie/614933?language=en-US&api_key=43a7ea280d085bd0376e108680615c7f#
 const IMAGE_PATH = "https://image.tmdb.org/t/p/w500";
 
 const Movie = () => {
@@ -11,22 +10,34 @@ const Movie = () => {
 	const BASE_URL = "https://api.themoviedb.org/3";
 	const apiKey = import.meta.env.VITE_MOVIE_API_KEY;
 	const [theMovie, setTheMovie] = useState("");
-	const [error, setError] = useState(null);
+	const [error, setError] = useState(false);
+	const [loading, setLoading] = useState(false);
 
 	const getMovie = async () => {
 		try {
 			const response = await fetch(`${BASE_URL}/movie/${id}?language=en-US&api_key=${apiKey}`);
+			setLoading(true);
+			setError(false);
+
 			const data = await response.json();
-			console.log(data);
 			setTheMovie(data);
 		} catch (error) {
-			setError(error);
+			setError(true);
+		} finally {
+			setLoading(false); // Set loading to false after fetch
 		}
 	};
 
 	useEffect(() => {
 		getMovie();
-	}, []);
+	}, [id]);
+
+	if (loading) {
+		return <div className='loading' />;
+	} else if (error) {
+		return <div style={{ textAlign: "center" }}>Error: Something went wrong...</div>;
+	}
+
 	const { vote_average, poster_path, overview, release_date, title, budget } = theMovie;
 
 	return (

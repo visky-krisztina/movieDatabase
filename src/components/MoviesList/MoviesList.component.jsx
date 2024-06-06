@@ -2,7 +2,7 @@ import MovieCard from "../MovieCard/MovieCard.component.jsx";
 import "./MoviesList.styles.css";
 
 const MovieList = ({ movies }) => {
-	if (!movies) {
+	if (!movies || !movies.length) {
 		return <h4 style={{ textAlign: "center" }}>No matching movies found..</h4>;
 	}
 	const formattedMovies = movies.map((item) => {

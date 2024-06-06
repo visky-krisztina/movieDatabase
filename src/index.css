@@ -167,6 +167,7 @@ a {
 }
 
 .loading {
+	margin: 0 auto;
 	width: 6rem;
 	height: 6rem;
 	border: 5px solid var(--grey-400);
@@ -193,5 +194,5 @@ a {
 	width: var(--view-width);
 	max-width: var(--max-width);
 	margin: 0 auto;
-	padding: 5rem 2rem;
+	padding: 1rem 2rem;
 }
