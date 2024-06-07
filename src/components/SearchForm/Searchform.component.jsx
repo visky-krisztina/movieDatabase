@@ -1,5 +1,6 @@
-import { Form, Navigate } from "react-router-dom";
+import { Form } from "react-router-dom";
 import { useState } from "react";
+import "./SearchForm.styles.css";
 
 const SearchForm = ({ handleSearch }) => {
 	const [searchKey, setSearchKey] = useState("");
