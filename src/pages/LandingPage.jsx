@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MoviesList from "../components/MoviesList/MoviesList.component.jsx";
-import SearchForm from "src/components/SearchForm/SearchForm.component.jsx";
+import SearchForm from "../components/SearchForm/SearchForm.component.jsx";
 import Pagination from "../components/Pagination/Pagination.component.jsx";
 
 const LandingPage = () => {
