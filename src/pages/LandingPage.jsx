@@ -22,7 +22,6 @@ const LandingPage = () => {
 			const response = await fetch(`${BASE_URL}/${type}`);
 
 			const data = await response.json();
-			console.log(data);
 			setMovies(data.results);
 		} catch (error) {
 			setError(true);

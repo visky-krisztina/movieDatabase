@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./styles/Movie.styles.css";
@@ -60,9 +59,6 @@ const Movie = () => {
 					<p>
 						<span className='movie-data'>Budget :</span> {budget}
 					</p>
-					<Link to='/' className='btn'>
-						back home
-					</Link>
 				</div>
 			</div>
 		</>

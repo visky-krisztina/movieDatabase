@@ -4,7 +4,9 @@ const Navbar = () => {
 	return (
 		<nav>
 			<div className='nav-center'>
-				<span className='logo'>Film kereső</span>
+				<NavLink to='/' className='logo'>
+					Film kereső adatbázis
+				</NavLink>
 				<div className='nav-links'>
 					<NavLink to='/' className='nav-link'>
 						Home
